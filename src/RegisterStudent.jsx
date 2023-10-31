@@ -12,21 +12,23 @@ function RegisterStudent() {
     const [email,setEmail]=useState('')
     const [phone,setPhone]=useState('')
     const [gender,setGender]=useState('')
-    const [duration,setDuration]=useState(0)
+    const [duration,setDuration]=useState('')
 
 
 
 
     const printname=()=>{
         
-        setUsers([...users,{id:v4(),userdata}])
+        setUsers([...users,{id:v4(),...userdata}])
         // localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(name))
         console.log(users)
     }
     useEffect(()=>{
         localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(users))
+        setUserData({name:'',email:'',gender:'',phone:'',duration:''})
 
     },[users])
+
   return (
     <>
     r{userdata.name}
@@ -112,19 +114,39 @@ function RegisterStudent() {
             </tr>
         </table>
     </form> */}
-    <input type='text' onChange={(e)=>setUserData(...userdata,{name:e.target.value})} value={userdata.name} placeholder="Name"/>
+    <input type='text' onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,name:e.target.value}
+        })
+    }} value={userdata.name} placeholder="Name"/>
     <br/>
-    <input type='email' onChange={(e)=>setUserData([...userdata,{email:e.target.value}])} value={userdata.email} placeholder="Email"/>
+    <input type='email' onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,email:e.target.value}
+        })
+    }} value={userdata.email} placeholder="Email"/>
     <br/>
-    <input type='number' onChange={(e)=>setUserData([...userdata,{phone:e.target.value}])} value={userdata.phone} placeholder="Phone"/>
+    <input type='number' onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,phone:e.target.value}
+        })
+    }} value={userdata.phone} placeholder="Phone"/>
     <br/>
-    <input type='number' onChange={(e)=>setUserData([...userdata,{duration:e.target.value}])} value={userdata.duration} placeholder="Duration"/>
+    <input type='number' onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,duration:e.target.value}
+        })
+    }} value={userdata.duration} placeholder="Duration"/>
     <br/>
-    <input id="gender" value='Male' type="radio" name="Gender" onClick={(e)=>{
-        setUserData([...userdata,{gender:e.target.value}])
+    <input id="gender" value='Male' type="radio" name="Gender" onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,gender:e.target.value}
+        })
     }}/>Male
-    <input id="gender" value='Female' type="radio" name="Gender" onClick={(e)=>{
-        setUserData([...userdata,{gender:e.target.value}])
+    <input id="gender" value='Female' type="radio" name="Gender" onChange={(e)=>{
+        setUserData((prev)=>{
+            return {...prev,gender:e.target.value}
+        })
     }}/>Female
     <button onClick={printname}>submit</button>
     
