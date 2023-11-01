@@ -28,6 +28,7 @@ function RegisterStudent() {
         setUserData({name:'',email:'',gender:'',phone:'',duration:''})
 
     },[users])
+    
 
   return (
     <>
