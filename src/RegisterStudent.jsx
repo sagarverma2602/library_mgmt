@@ -20,7 +20,6 @@ function RegisterStudent() {
     const printname=()=>{
         
         setUsers([...users,{id:v4(),...userdata}])
-        // localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(name))
         console.log(users)
     }
     useEffect(()=>{
@@ -35,86 +34,7 @@ function RegisterStudent() {
     r{userdata.name}
     <div>
         <h1>Student Registraion</h1>
-    {/* <form>
-        <table>
-            <tr>
-                <td>
-                    Name:
-                </td>
-                <td>
-                    <input type="text" placeholder="Name"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Phone Number:
-                </td>   
-                <td>
-                    <input type="phone" placeholder="9876******"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Duration:
-                </td>
-                <td>
-                    <input type="number" placeholder="In hours"/>
-                </td>
-                <td>
-                    Time-Slot:
-                </td>
-                <td>
-                    <input type="time"/>
-                    <input type="time"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Floor:
-                </td>
-                <td>
-                    <input type="radio" name="Floor"/>First
-                    <input type="radio" name="Floor"/>Second
-                </td>
-                <td>
-                    Seat-Number:
-                </td>
-                <td>
-                    <input type="number" placeholder="Seat-Number"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Gender:
-                </td>
-                <td>
-                    <input type="radio" name="Gender"/>Male
-                    <input type="radio" name="Gender"/>Female
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Date-of-joining:
-                </td>
-                <td>
-                    <input type="date"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Address:
-                </td>
-                <td>
-                    <textarea rows="3" cols="20" placeholder="Address"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="Submit"/>
-                </td>
-            </tr>
-        </table>
-    </form> */}
+    
     <input type='text' onChange={(e)=>{
         setUserData((prev)=>{
             return {...prev,name:e.target.value}
