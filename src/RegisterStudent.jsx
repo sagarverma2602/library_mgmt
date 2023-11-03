@@ -18,7 +18,6 @@ function RegisterStudent() {
 
 
     const printname=()=>{
-        
         setUsers([...users,{id:v4(),...userdata}])
         console.log(users)
     }
