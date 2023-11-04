@@ -27,47 +27,27 @@ function RegisterStudent() {
 
     },[users])
     
-
+    const changehandler=(e)=>{
+        setUserData((prev)=>{
+            return {...prev,name:e.target.value}
+        })
+    }
   return (
     <>
     r{userdata.name}
     <div>
         <h1>Student Registraion</h1>
     
-    <input type='text' onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,name:e.target.value}
-        })
-    }} value={userdata.name} placeholder="Name"/>
+    <input type='text' onChange={changehandler} value={userdata.name} placeholder="Name"/>
     <br/>
-    <input type='email' onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,email:e.target.value}
-        })
-    }} value={userdata.email} placeholder="Email"/>
+    <input type='email' onChange={changehandler} value={userdata.email} placeholder="Email"/>
     <br/>
-    <input type='number' onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,phone:e.target.value}
-        })
-    }} value={userdata.phone} placeholder="Phone"/>
+    <input type='number' onChange={changehandler} value={userdata.phone} placeholder="Phone"/>
     <br/>
-    <input type='number' onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,duration:e.target.value}
-        })
-    }} value={userdata.duration} placeholder="Duration"/>
+    <input type='number' onChange={changehandler} value={userdata.duration} placeholder="Duration"/>
     <br/>
-    <input id="gender" value='Male' type="radio" name="Gender" onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,gender:e.target.value}
-        })
-    }}/>Male
-    <input id="gender" value='Female' type="radio" name="Gender" onChange={(e)=>{
-        setUserData((prev)=>{
-            return {...prev,gender:e.target.value}
-        })
-    }}/>Female
+    <input id="gender" value='Male' type="radio" name="Gender" onChange={changehandler}/>Male
+    <input id="gender" value='Female' type="radio" name="Gender" onChange={changehandler}/>Female
     <button onClick={printname}>submit</button>
     
 
