@@ -29,6 +29,7 @@ function RegisterStudent() {
     }
   return (
     <>
+    
     <div>
         <h1>Student Registraion</h1>
     
